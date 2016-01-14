@@ -13,6 +13,7 @@ S_arc  = "${WORKDIR}/git"
 NEWLIB_HOST_arc ?= "arc-poky-elf"
 EXTRA_OECONF_append_arc = " --enable-multilib"
 TUNE_CCARGS_arc := " -nostdlib"
+CFLAGS_remove_arc = "-DMISSING_SYSCALL_NAMES"
 
 # ERROR: QA Issue: Architecture did not match (195 to 93) 
 INSANE_SKIP_${PN} += "arch"
