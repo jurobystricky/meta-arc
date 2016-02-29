@@ -2,11 +2,11 @@ require recipes-devtools/gcc/gcc-common.inc
 
 # Third digit in PV should be incremented after a minor release
 
-PV = "4.8.3+gitarc"
+PV = "4.8.5+gitarc"
 
 # BINV should be incremented to a revision after a minor gcc release
 
-BINV = "4.8.3"
+BINV = "4.8.5"
 
 FILESEXTRAPATHS =. "${FILE_DIRNAME}/gcc:${COREBASE}/meta/recipes-devtools/gcc/gcc-4.8:"
 
@@ -23,9 +23,7 @@ LIC_FILES_CHKSUM = "\
     file://COPYING.RUNTIME;md5=fe60d87048567d4fe8c8a0ed2448bcc8 \
 "
 
-SRCREV = "arc-2014.12"
-
-#    file://0002-uclibc-conf.patch 
+SRCREV="037cc276cdf8139375f0987ef02204ae3a8c4b84"
 
 SRC_URI = "\
     git://github.com/foss-for-synopsys-dwc-arc-processors/gcc.git;branch=arc-4.8-dev \
@@ -62,7 +60,6 @@ SRC_URI = "\
     file://0046-libatomic-deptracking.patch \
     file://0047-repomembug.patch \
     file://0049-Enable-SPE-AltiVec-generation-on-powepc-linux-target.patch \
-    file://0052-PR-rtl-optimization-61801.patch \
     file://target-gcc-includedir.patch \
     file://hack.patch \
 "
@@ -120,5 +117,3 @@ EXTRA_OECONF_PATHS = "\
     --with-build-sysroot=${STAGING_DIR_TARGET} \
 "
 
-
-#EXTRA_OECONF_BASE += "--with-cpu=arc700"
